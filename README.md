@@ -38,3 +38,13 @@ require __DIR__."/../vendor/autoload.php"; // point to autoload.php
     RewriteRule ^ index.php [L]
 </IfModule>
 ````
+
+
+## API SERVER
+
+API の仕様についてはこちら
+
+http://connpass.com/about/api/
+
+
+
