@@ -11,6 +11,7 @@ namespace Chatbox\Connpass;
 use Chatbox\Connpass\Http\ResponseTrait;
 
 use Chatbox\Connpass\Repository\ConnpassRepository;
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 
 use Laravel\Lumen\Application as Lumen;
@@ -31,12 +32,13 @@ class ConnpassServiceProvider extends ServiceProvider
     }
 
     protected function registerRoute($router){
-        $prefix = $_SERVER["REQUEST_URI"];
+        $prefix = parse_url($_SERVER["REQUEST_URI"])["path"];
         $self = $this;
         $router->get("$prefix",function(
-            ConnpassRepository $repository
+            ConnpassRepository $repository,
+            Request $request
         )use($self){
-            $list = $repository->get();
+            $list = $repository->get($request->all());
             return $self->response([
                 "status" => "OK",
                 "event" => $list["events"]??[]

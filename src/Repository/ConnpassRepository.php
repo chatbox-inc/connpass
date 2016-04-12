@@ -11,10 +11,12 @@ use GuzzleHttp\Client;
 class ConnpassRepository
 {
 
-    public function get()
+    public function get(array $query)
     {
         $client = new Client();
-        $res = $client->request('GET', 'http://connpass.com/api/v1/event/');
+        $res = $client->request('GET', 'http://connpass.com/api/v1/event/',[
+            "query" => $query
+        ]);
 //        echo $res->getStatusCode();
 // 200
 //        echo $res->getHeaderLine('content-type');
