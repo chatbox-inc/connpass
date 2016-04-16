@@ -6,7 +6,7 @@ composer install して任意の場所にindex.php と .htaccessを配置する�
 APIサーバを構築できます。
 
 ````
-$ composer install chatbox-inc/connpass:dev-application
+$ composer install chatbox-inc/connpass:dev-master
 ````
 
 
