@@ -6,12 +6,6 @@
             "email": "mikakane2@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type":"path",
-            "url": "./module/"
-        }
-    ],
     "require": {
         "chatbox-inc/connpass": "dev-master"
     }
